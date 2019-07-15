@@ -39,8 +39,8 @@ def collect(word,pn):
         except:
             pass
         
-def save(result,word,total):
-    filename = word + "-" + str(total) + ".txt"
+def save(result):
+    filename = time.strftime("%Y-%m-%d-%M", time.localtime()) + "-" + str(random.randint(1,100)) + "-" + str(random.randint(0,9)) + ".txt"
 
     for i in result:
         with open(filename,"a",encoding="utf-8") as fw:
@@ -73,7 +73,7 @@ def main(word,pn):
 
     total = len(urlList)
 
-    save(urlList,word,total)
+    save(urlList)
 
     return total
 
